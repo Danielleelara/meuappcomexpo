@@ -1,11 +1,42 @@
-import React from 'react';
-import {  Text } from 'react-native';
-import { Container, Title } from './styles';
+import React, { FC } from 'react'
 
-export default function DashBoard() {
+import {
+  Container,
+  Header,
+  Icon,
+  UserGreeting,
+  Photo,
+  UserInfo,
+  User,
+  UserName,
+  UserWrapper
+} from './styles'
+
+import HighlightCard from '../../components/HighlightCard'
+
+const DashBoard: FC = () => {
   return (
-    <Container >
-      <Title>DashBoard</Title>
+    <Container>
+      <Header>
+        <UserWrapper>
+          <UserInfo>
+            <Photo
+              source={{
+                uri: 'https://avatars.githubusercontent.com/u/78480991?v=4'
+              }}
+            />
+            <User>
+              <UserGreeting>Olá</UserGreeting>
+              <UserName>Danielle de Souza</UserName>
+            </User>
+          </UserInfo>
+          <Icon name="power" />
+        </UserWrapper>
+      </Header>
+      
+      <HighlightCard title="teste" icon="power" />
     </Container>
-  ); 
-};
+  )
+}
+
+export default DashBoard
